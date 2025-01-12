@@ -5,41 +5,69 @@
 `-check__UnicodePointCode                             -Функция проверяет корректность значения Юникодного символа: по сути внутри только две проверки - не входит ли значение в диапазон Суррогатной пары, и не выходит ли значение за пределы максимального значения Юникода.  `  
   
 `-check__UTF8symv                                     -Функция проверяет на корректность один единственный символ UTF-8. Данная функция не проверяет символ UTF-8 на принадлежность к диапазону "суррогтаных пар" и выход за пределы максимального значения Юниккод. Если нужная данная проверка, то использовать функцию "check__UTF8symv_SurrogatePair"  `  
+  
 `-check__UTF8symv_SurrogatePair                       -Функция проверяет на корректность один единственный символ UTF-8.Так же дополнительно происходит проверка символа UTF-8 на принадлежность к диапазону "суррогтаных пар" и выход за пределы максимального значения Юниккод.  `  
+  
 `-check_UTF8_string                                   -Функция проверят строку с символами UTF-8 с заданным размером на корректность кодировки UTF-8. Данная функция не проверяет символы UTF-8 на принадлежность к диапазону "суррогтаных пар" и выход за пределы максимального значения Юниккод. Если нужная данная проверка, то использовать функцию "check__UTF8_string_SurrogatePair"  `  
+  
 `-check__UTF8_string_SurrogatePair                    -Функция проверят строку с символами UTF-8 с заданным размером на корректность кодировки UTF-8. Так же дополнительно происходит проверка символа UTF-8 на принадлежность к диапазону "суррогтаных пар" и выход за пределы максимального значения Юниккод.  `  
   
--get__UTF8symv_ByteSize
--get__UTF8SymvsNumbers
+`-get__UTF8symv_ByteSize                              -Функция возврашает размер в байтах UTF-8 символа.  `  
+  
+`-get__UTF8SymvsNumbers                               -Функция возврашает кол-во UTF-8 символов в указанной строке с заданным размером.  `  
 
--convert__UTF8Symv_to_UnicodePointCode
--convert__UTF8_String_to_Vec_UnicodePointCode
--convert__UTF8_String_to_Vec_UnicodePointCode__NotDuplicated
--convert__UTF8_String_to_Vec_UnicodePointCode__Info
--convert__SpecificNumPos_UTF8Symv_in_String_to_UnicodePointCode__Info
--convert__UnicodePointCode_to_UTF8Symv
--convert__Vec_UnicodePointCode_to_Vec_UTF8
--convert__Vec_UnicodePointCode_to_String_UTF8
+`-convert__UTF8Symv_to_UnicodePointCode               -Фунция конвертирует символ в кодировке UTF-8 в значение Юникода.`  
+  
+`-convert__UTF8_String_to_Vec_UnicodePointCode        -Фунция конвертирует строку с символами в кодировке UTF-8 заданного размера в вектор значений Юникода.  `  
+  
+`-convert__UTF8_String_to_Vec_UnicodePointCode__NotDuplicated            -Фунция конвертирует строку с символами в кодировке UTF-8 заданного размера в вектор значений Юникода И ЕСЛИ в строке есть повторяющиеся символы, то не заносит потовряющиеся символы в вектор результата, вообщем без Дубликатов символов.  `  
+  
+`-convert__UTF8_String_to_Vec_UnicodePointCode__Info                     -Функция собирает "информацию" о UTF8 символах в указанной строке в указанных размерах.  `  
+  
+`-convert__SpecificNumPos_UTF8Symv_in_String_to_UnicodePointCode__Info   -Функция собирает "информацию" о UTF8 символах в указанной строке в указанных размерах.  `  
+  
+`-convert__UnicodePointCode_to_UTF8Symv                                  -Функция преобразовывает значение Юникодного символа в симмвол в кодировке UTF-8.  `  
+  
+`-convert__Vec_UnicodePointCode_to_Vec_UTF8                              -Функция преобразовывает вектор значений Юникодных символов в вектор симмвол в кодировке UTF-8.  `  
+  
+`-convert__Vec_UnicodePointCode_to_String_UTF8                           -Функция преобразовывает вектор значений Юникодных символов в Строку симмволов в кодировке UTF-8.  `  
+  
+  
+`-check_UTF16symvLE                                                     -Функция проверяет на корректность один единственный символ UTF-16. Данная функция не проверяет символ UTF-16 на принадлежность к диапазону "суррогтаных пар" и выход за пределы максимального значения Юниккод. Если нужная данная проверка, то использовать функцию "check__UTF16symvLE_SurrogatePair"  `  
 
--check_UTF16symvLE
--check__UTF16symvLE_SurrogatePair
--check_UTF16LE_string
+`-check__UTF16symvLE_SurrogatePair                                      -Функция проверяет на корректность один единственный символ UTF-16.Так же дополнительно происходит проверка символа UTF-16 на принадлежность к диапазону "суррогтаных пар" и выход за пределы максимального значения Юниккод.  `  
 
--get__UTF16symvLE_PairSize
--get_UTF16SymvsLENumbers
+`-check_UTF16LE_string                                                  -Данная функция проверят строку с символами UTF-16 с заданным размером на корректность кодировки UTF-16. Данная функция не проверяет символы UTF-16 на принадлежность к диапазону "суррогтаных пар" и выход за пределы максимального значения Юниккод. Если нужная данная проверка, то использовать функцию "check__UTF16_string_SurrogatePair"  `  
 
--convert__UTF16SymvLE_to_UnicodePointCode
--convert__UTF16LE_String_to_Vec_UnicodePointCode
--convert__UTF16LE_String_to_Vec_UnicodePointCode__NotDuplicated
--convert__UTF16LE_String_to_Vec_UnicodePointCode__Info
--convert__SpecificNumPos_UTF16SymvLE_in_String_to_UnicodePointCode__Info
--convert__UnicodePointCode_to_UTF16SymvLE
--convert__Vec_UnicodePointCode_to_Vec_UTF16LE
--convert__Vec_UnicodePointCode_to_String_UTF16LE
+`-get__UTF16symvLE_PairSize                                             -Функция возврашает размер в парах UTF-16 символа.  `  
 
--Convert_from_UTF8_to_UTF16LE_OneSymv
--Convert_from_UTF16LE_to_UTF8_OneSymv
--Convert_from_UTF8_to_UTF16LE
--Convert_from_UTF16LE_to_UTF8
+`-get__UTF16SymvsLENumbers                                              -Функция возврашает кол-во UTF-16 символов в указанной строке с заданным размером.  `  
+
+
+`-convert__UTF16SymvLE_to_UnicodePointCode                                 -Фунция конвертирует символ в кодировке UTF-16 в значение Юникода.  `  
+
+`-convert__UTF16LE_String_to_Vec_UnicodePointCode                          -Фунция конвертирует строку с символами в кодировке UTF-8 заданного размера в вектор значений Юникода.  `  
+
+`-convert__UTF16LE_String_to_Vec_UnicodePointCode__NotDuplicated           -Фунция конвертирует строку с символами в кодировке UTF-16 заданного размера в вектор значений Юникода И ЕСЛИ в строке есть повторяющиеся символы, то не заносит потовряющиеся символы в вектор результата, вообщем без Дубликатов символов.  `  
+
+`-convert__UTF16LE_String_to_Vec_UnicodePointCode__Info                    -Функция собирает "информацию" о UTF16 символах в указанной строке в указанных размерах.  `  
+
+`-convert__SpecificNumPos_UTF16SymvLE_in_String_to_UnicodePointCode__Info  -Функция собирает "информацию" о UTF16 символах в указанной строке в указанных размерах.  `  
+
+`-convert__UnicodePointCode_to_UTF16SymvLE                                 -Функция преобразовывает значение Юникодного символа в симмвол в кодировке UTF-16.  `  
+
+`-convert__Vec_UnicodePointCode_to_Vec_UTF16LE                             -Функция преобразовывает вектор значений Юникодных символов в вектор симмвол в кодировке UTF-16.  `  
+
+`-convert__Vec_UnicodePointCode_to_String_UTF16LE                          -Функция преобразовывает вектор значений Юникодных символов в Строку симмволов в кодировке UTF-16.  `  
+
+
+`-Convert_from_UTF8_to_UTF16LE_OneSymv                                     -Функция преобразовывает Один символ в кодировке UTF8 в символ в кодировке UTF16(little-endian).  `  
+  
+`-Convert_from_UTF16LE_to_UTF8_OneSymv                                     -Функция преобразовывает Один символ в кодировке UTF16(little-endian) в символ в кодировке UTF-8.  `  
+  
+`-Convert_from_UTF8_to_UTF16LE                                             -Функция преобразовывает строку символов в кодировке UTF-8 в сроку символ в кодировке UTF16(little-endian).  `  
+  
+`-Convert_from_UTF16LE_to_UTF8                                             -Функция преобразовывает строку символов в кодировке UTF16 в сроку символ в кодировке UTF8.  `  
+  
 
 Примеры использования методов и более детальное опинсание смотреть в main.cpp
